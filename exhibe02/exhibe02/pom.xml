@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>milu.kiriu2010</groupId>
+  <artifactId>exhibe02</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  	<mylib.dir>C:\Project\lib</mylib.dir>
+  </properties>
+  
+  <dependencies>
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate</artifactId>
+	    <version>3.2.6.ga</version>
+	    <!-- 
+	    <scope>system</scope>
+	    <systemPath>${mylib.dir}/hibernate-3.2.6.ga.jar</systemPath>
+	    -->
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-collections/commons-collections -->
+	<dependency>
+	    <groupId>commons-collections</groupId>
+	    <artifactId>commons-collections</artifactId>
+	    <version>2.1.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>3.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-logging/commons-logging -->
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>1.1.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/antlr/antlr -->
+	<dependency>
+	    <groupId>antlr</groupId>
+	    <artifactId>antlr</artifactId>
+	    <version>2.7.6</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/asm/asm -->
+	<dependency>
+	    <groupId>asm</groupId>
+	    <artifactId>asm</artifactId>
+	    <version>1.5.3</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/asm/asm-attrs -->
+	<dependency>
+	    <groupId>asm</groupId>
+	    <artifactId>asm-attrs</artifactId>
+	    <version>1.5.3</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/cglib/cglib -->
+	<dependency>
+	    <groupId>cglib</groupId>
+	    <artifactId>cglib</artifactId>
+	    <version>2.1_3</version>
+	    <!-- 
+	    <scope>system</scope>
+	    <systemPath>${mylib.dir}/cglib-2.1_3.jar</systemPath>
+	    -->
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+	<dependency>
+	    <groupId>dom4j</groupId>
+	    <artifactId>dom4j</artifactId>
+	    <version>1.6.1</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/ehcache/ehcache -->
+	<dependency>
+	    <groupId>ehcache</groupId>
+	    <artifactId>ehcache</artifactId>
+	    <version>1.1</version>
+	</dependency>
+  
+	<!-- https://mvnrepository.com/artifact/javax.transaction/jta -->
+	<dependency>
+	    <groupId>javax.transaction</groupId>
+	    <artifactId>jta</artifactId>
+	    <version>1.1</version>
+	</dependency>
+  
+	<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>42.1.4.jre6</version>
+	    <!-- 
+	    <scope>system</scope>
+	    <systemPath>${mylib.dir}/postgresql-42.1.4.jre6.jar</systemPath>
+	    -->
+	</dependency>
+  
+  </dependencies>
+  
+  <build>
+  	<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+        <archive>
+         <manifest>
+          <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+         </manifest>
+        </archive>
+        </configuration>
+      </plugin>  	
+  	
+      <!-- JDK1.6コンパイラを指定 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>  
+      
+      <plugin>  
+	   <groupId>org.codehaus.mojo</groupId>  
+	   <artifactId>exec-maven-plugin</artifactId>  
+	   <version>3.0.0</version>  
+	   <executions>  
+	    <execution>  
+	     <phase>test</phase>  
+	     <goals>  
+	      <goal>java</goal>  
+	     </goals>  
+	     <configuration>  
+	      <mainClass>milu.kiriu2010.exhibe02.main.ExHibe14</mainClass>  
+	      <arguments>  
+	       <argument>arg0</argument>  
+	       <argument>arg1</argument>  
+	      </arguments>  
+	     </configuration>  
+	    </execution>  
+	   </executions>  
+		</plugin> 	
+  	</plugins>
+  </build>
+  
+</project>
